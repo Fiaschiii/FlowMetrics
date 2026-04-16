@@ -27,7 +27,7 @@ def criar_banco():
     conn.commit()
     cursor.close()
     conn.close()
-    print("✅ Banco flowmetrics_db criado com sucesso!")
+    print("Banco flowmetrics_db criado com sucesso!")
 
 if __name__ == "__main__":
     criar_banco()

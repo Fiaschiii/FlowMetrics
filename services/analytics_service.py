@@ -34,5 +34,5 @@ def buscar_metricas(dias=7):
             "tempo_medio_sessao": float(row.metric_values[4].value),
         })
 
-    print(f"✅ {len(dados)} registros buscados do Analytics!")
+    print(f"{len(dados)} registros buscados do Analytics!")
     return dados

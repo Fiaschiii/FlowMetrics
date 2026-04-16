@@ -4,7 +4,7 @@ from services.analytics_service import buscar_metricas
 from services.db_service import salvar_metricas, buscar_relatorio
 
 def executar_pipeline():
-    print("\n🔄 Iniciando pipeline do FlowMetrics...")
+    print("\nIniciando pipeline do FlowMetrics...")
 
     # 1. Busca os dados no Google Analytics
     dados = buscar_metricas(dias=7)
@@ -14,11 +14,11 @@ def executar_pipeline():
 
     # 3. Busca e exibe o relatório
     relatorio = buscar_relatorio()
-    print("\n📊 Últimas métricas salvas:")
+    print("\nÚltimas métricas salvas:")
     for linha in relatorio[:5]:
         print(linha)
 
-    print("✅ Pipeline concluído!\n")
+    print("Pipeline concluído!\n")
 
 # Agenda execução automática todo dia às 08:00
 schedule.every().day.at("08:00").do(executar_pipeline)

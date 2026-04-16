@@ -25,7 +25,7 @@ def salvar_metricas(dados: list):
 
     cursor.executemany(sql, dados)
     conn.commit()
-    print(f"✅ {cursor.rowcount} registros salvos no MySQL!")
+    print(f"{cursor.rowcount} registros salvos no MySQL!")
 
     cursor.close()
     conn.close()
