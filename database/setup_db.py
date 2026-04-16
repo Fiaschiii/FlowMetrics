@@ -1,4 +1,3 @@
-# database/setup_db.py
 import mysql.connector
 
 def criar_banco():

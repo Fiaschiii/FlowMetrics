@@ -1,4 +1,3 @@
-# services/db_service.py
 import mysql.connector
 
 DB_CONFIG = {
