@@ -1,4 +1,3 @@
-# dashboard/app.py
 import streamlit as st
 import pandas as pd
 import mysql.connector
@@ -9,7 +8,6 @@ import os
 # Configuração da página
 st.set_page_config(
     page_title="FlowMetrics",
-    page_icon="📊",
     layout="wide"
 )
 
@@ -43,14 +41,14 @@ def executar_pipeline():
         st.error(f"Erro ao executar pipeline: {e}")
 
 # Header
-st.title("📊 FlowMetrics")
+st.title("FlowMetrics")
 st.subheader("Análise automatizada de dados do Google Analytics")
 st.divider()
 
 # Botão para rodar o pipeline manualmente
 col1, col2 = st.columns([1, 3])
 with col1:
-    if st.button("▶️ Executar Pipeline", type="primary"):
+    if st.button("Executar Pipeline", type="primary"):
         with st.spinner("Executando pipeline..."):
             executar_pipeline()
 
@@ -62,7 +60,7 @@ df = carregar_dados()
 if df is not None and not df.empty:
 
     # Métricas resumidas
-    st.subheader("📈 Resumo Geral")
+    st.subheader("Resumo Geral")
     m1, m2, m3, m4 = st.columns(4)
     m1.metric("Total de Sessões", f"{df['sessoes'].sum():,}")
     m2.metric("Total de Usuários", f"{df['usuarios'].sum():,}")
@@ -72,7 +70,7 @@ if df is not None and not df.empty:
     st.divider()
 
     # Gráficos
-    st.subheader("📊 Evolução das Métricas")
+    st.subheader("Evolução das Métricas")
     tab1, tab2, tab3 = st.tabs(["Sessões", "Usuários", "Visualizações"])
 
     with tab1:
@@ -85,8 +83,8 @@ if df is not None and not df.empty:
     st.divider()
 
     # Tabela completa
-    st.subheader("📋 Histórico Completo")
+    st.subheader("Histórico Completo")
     st.dataframe(df, use_container_width=True)
 
 else:
-    st.warning("⚠️ Nenhum dado encontrado! Clique em 'Executar Pipeline' para buscar os dados.")
+    st.warning("Nenhum dado encontrado! Clique em 'Executar Pipeline' para buscar os dados.")
