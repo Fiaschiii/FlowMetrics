@@ -5,7 +5,7 @@ import random
 DB_CONFIG = {
     "host": "localhost",
     "user": "miguel",
-    "password": "fiaschi0987",
+    "password": "*********",
     "database": "flowmetrics_db"
 }
 

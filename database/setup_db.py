@@ -4,7 +4,7 @@ def criar_banco():
     conn = mysql.connector.connect(
         host="localhost",
         user="miguel",
-        password="fiaschi0987"
+        password="********"
     )
     cursor = conn.cursor()
 
