@@ -15,7 +15,7 @@ def gerar_dados_ficticios():
 
     print("Gerando dados fictícios...")
 
-    # Gera dados para os últimos 30 dias
+    
     for i in range(30):
         data = date.today() - timedelta(days=i)
         sessoes = random.randint(100, 1000)
