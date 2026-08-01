@@ -5,13 +5,13 @@ import subprocess
 import sys
 import os
 
-# Configuração da página
+
 st.set_page_config(
     page_title="FlowMetrics",
     layout="wide"
 )
 
-# Conexão com o banco
+
 DB_CONFIG = {
     "host": "localhost",
     "user": "miguel",
@@ -40,12 +40,12 @@ def executar_pipeline():
     except Exception as e:
         st.error(f"Erro ao executar pipeline: {e}")
 
-# Header
+
 st.title("FlowMetrics")
 st.subheader("Análise automatizada de dados do Google Analytics")
 st.divider()
 
-# Botão para rodar o pipeline manualmente
+
 col1, col2 = st.columns([1, 3])
 with col1:
     if st.button("Executar Pipeline", type="primary"):
@@ -54,12 +54,12 @@ with col1:
 
 st.divider()
 
-# Carrega os dados
+
 df = carregar_dados()
 
 if df is not None and not df.empty:
 
-    # Métricas resumidas
+
     st.subheader("Resumo Geral")
     m1, m2, m3, m4 = st.columns(4)
     m1.metric("Total de Sessões", f"{df['sessoes'].sum():,}")
@@ -69,7 +69,7 @@ if df is not None and not df.empty:
 
     st.divider()
 
-    # Gráficos
+
     st.subheader("Evolução das Métricas")
     tab1, tab2, tab3 = st.tabs(["Sessões", "Usuários", "Visualizações"])
 
@@ -82,7 +82,7 @@ if df is not None and not df.empty:
 
     st.divider()
 
-    # Tabela completa
+    
     st.subheader("Histórico Completo")
     st.dataframe(df, use_container_width=True)
 
