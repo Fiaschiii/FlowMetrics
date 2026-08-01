@@ -1,3 +1,5 @@
+# Arquivos para serem ignorados #
+
 # Python
 __pycache__/
 *.pyc
