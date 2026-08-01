@@ -5,7 +5,7 @@ import webbrowser
 import sys
 import os
 
-# Configuração visual
+
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
 
@@ -13,7 +13,7 @@ class FlowMetricsApp(ctk.CTk):
     def __init__(self):
         super().__init__()
 
-        # Configuração da janela
+        
         self.title("FlowMetrics")
         self.geometry("400x500")
         self.resizable(False, False)
@@ -24,10 +24,10 @@ class FlowMetricsApp(ctk.CTk):
 
     def criar_interface(self):
 
-        # Logo / Título
+        
         self.label_titulo = ctk.CTkLabel(
             self,
-            text="📊 FlowMetrics",
+            text="FlowMetrics",
             font=ctk.CTkFont(size=28, weight="bold")
         )
         self.label_titulo.pack(pady=20)
@@ -40,22 +40,22 @@ class FlowMetricsApp(ctk.CTk):
         )
         self.label_subtitulo.pack(pady=5)
 
-        # Divisor
+        
         self.divisor = ctk.CTkFrame(self, height=2, fg_color="gray")
         self.divisor.pack(fill="x", padx=20, pady=20)
 
-        # Status
+        
         self.label_status = ctk.CTkLabel(
             self,
-            text="⚪ Status: Aguardando...",
+            text="Status: Aguardando...",
             font=ctk.CTkFont(size=13)
         )
         self.label_status.pack(pady=10)
 
-        # Botão Iniciar
+        
         self.btn_iniciar = ctk.CTkButton(
             self,
-            text="▶️ Iniciar FlowMetrics",
+            text="Iniciar FlowMetrics",
             command=self.iniciar_dashboard,
             width=200,
             height=45,
@@ -65,10 +65,10 @@ class FlowMetricsApp(ctk.CTk):
         )
         self.btn_iniciar.pack(pady=10)
 
-        # Botão Abrir no Navegador
+        
         self.btn_navegador = ctk.CTkButton(
             self,
-            text="🌐 Abrir no Navegador",
+            text="Abrir no Navegador",
             command=self.abrir_navegador,
             width=200,
             height=45,
@@ -79,10 +79,10 @@ class FlowMetricsApp(ctk.CTk):
         )
         self.btn_navegador.pack(pady=10)
 
-        # Botão Parar
+        
         self.btn_parar = ctk.CTkButton(
             self,
-            text="⏹️ Parar FlowMetrics",
+            text="Parar FlowMetrics",
             command=self.parar_dashboard,
             width=200,
             height=45,
@@ -93,11 +93,11 @@ class FlowMetricsApp(ctk.CTk):
         )
         self.btn_parar.pack(pady=10)
 
-        # Divisor
+        
         self.divisor2 = ctk.CTkFrame(self, height=2, fg_color="gray")
         self.divisor2.pack(fill="x", padx=20, pady=20)
 
-        # Rodapé
+        
         self.label_rodape = ctk.CTkLabel(
             self,
             text="FlowMetrics v1.0 • Python + MySQL + Google Analytics",
@@ -125,7 +125,7 @@ class FlowMetricsApp(ctk.CTk):
         import time
         time.sleep(3)
 
-        self.label_status.configure(text="🟢 Status: Rodando!")
+        self.label_status.configure(text="Status: Rodando!")
         self.btn_navegador.configure(state="normal")
         self.btn_parar.configure(state="normal")
 
@@ -137,7 +137,7 @@ class FlowMetricsApp(ctk.CTk):
             self.streamlit_process.terminate()
             self.streamlit_process = None
 
-        self.label_status.configure(text="⚪ Status: Parado!")
+        self.label_status.configure(text="Status: Parado!")
         self.btn_iniciar.configure(state="normal")
         self.btn_navegador.configure(state="disabled")
         self.btn_parar.configure(state="disabled")
