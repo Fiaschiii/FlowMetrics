@@ -3,7 +3,7 @@ from google.analytics.data_v1beta.types import (
     RunReportRequest, DateRange, Metric, Dimension
 )
 
-PROPERTY_ID = "seu_property_id"  # Ex: "123456789"
+PROPERTY_ID = "seu_property_id"  
 
 def buscar_metricas(dias=7):
     client = BetaAnalyticsDataClient()
