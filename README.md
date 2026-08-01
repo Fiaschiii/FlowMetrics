@@ -1,6 +1,6 @@
 # 📊 FlowMetrics
 
-Sistema automatizado de análise de dados que coleta métricas do Google Analytics, armazena em um banco MySQL e exibe em um dashboard interativo — de forma totalmente automática.
+Sistema automatizado de análise de dados que coleta métricas do Google Analytics, armazena em um banco MySQL e exibe em um dashboard interativo — de forma totalmente automática!
 
 
 ## 🛠️ Stack Tecnológica
