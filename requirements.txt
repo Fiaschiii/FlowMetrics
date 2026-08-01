@@ -1,3 +1,5 @@
+# Libs para rodar o script"
+
 mysql-connector-python
 google-analytics-data
 pandas
